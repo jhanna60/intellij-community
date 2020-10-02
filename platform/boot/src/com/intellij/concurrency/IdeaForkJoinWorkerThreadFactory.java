@@ -29,6 +29,8 @@ public final class IdeaForkJoinWorkerThreadFactory implements ForkJoinPool.ForkJ
     // then on the first use the FJP will explode, revealing who did the too early FJP init
     if (!IdeaForkJoinWorkerThreadFactory.class.getName().equals(System.getProperty("java.util.concurrent.ForkJoinPool.common.threadFactory"))) {
       System.setProperty("java.util.concurrent.ForkJoinPool.common.threadFactory", PoisonFactory.class.getName());
+
+      
     }
   }
 
